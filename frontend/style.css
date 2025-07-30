@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #14B8A6; /* Teal */
+  --accent-color: #8B5CF6; /* Purple */
+  --bg-light: #F5F5F5;
+  --bg-dark: #1F2937;
+  --text-light: #1F2937;
+  --text-dark: #F5F5F5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-light: #1F2937;
+    --text-light: #F5F5F5;
+    --bg-dark: #F5F5F5;
+    --text-dark: #1F2937;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.nft-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
